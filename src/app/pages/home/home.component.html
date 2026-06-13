@@ -42,11 +42,11 @@
       </div>
 
       <div class="hero-actions">
-        <a routerLink="/productos" class="btn btn-primary btn-lg">
+        <a skipLocationChange routerLink="/productos" class="btn btn-primary btn-lg">
           Ver Catálogo
           <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
         </a>
-        <a routerLink="/contacto" class="btn btn-outline btn-lg" style="color: white; border-color: rgba(255,255,255,0.5);">
+        <a skipLocationChange routerLink="/contacto" class="btn btn-outline btn-lg" style="color: white; border-color: rgba(255,255,255,0.5);">
           Solicitar Cotización
         </a>
       </div>
@@ -146,7 +146,7 @@
           <div class="product-category">{{ product.category }}</div>
           <h3 class="product-name">{{ product.name }}</h3>
           <p class="product-desc">{{ product.desc }}</p>
-          <a routerLink="/productos" class="product-link">
+          <a skipLocationChange routerLink="/productos" class="product-link">
             Ver más
             <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
           </a>
@@ -154,7 +154,7 @@
       }
     </div>
     <div style="text-align: center; margin-top: var(--space-10);">
-      <a routerLink="/productos" class="btn btn-primary btn-lg">Ver Catálogo Completo</a>
+      <a skipLocationChange routerLink="/productos" class="btn btn-primary btn-lg">Ver Catálogo Completo</a>
     </div>
   </div>
 </section>
@@ -168,7 +168,7 @@
         <p class="cta-subtitle">Cuéntanos qué necesitas y te preparamos una cotización personalizada sin costo.</p>
       </div>
       <div class="cta-actions">
-        <a routerLink="/contacto" class="btn btn-white">Solicitar Cotización Gratis</a>
+        <a skipLocationChange routerLink="/contacto" class="btn btn-white">Solicitar Cotización Gratis</a>
         <a href="https://wa.me/59175470318" target="_blank" class="btn btn-outline" style="color:white; border-color: rgba(255,255,255,0.4);">
           Chatear por WhatsApp
         </a>
