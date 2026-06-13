@@ -253,15 +253,21 @@
 
 /* Logo inside float card */
 .float-logo-wrap {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 6px;
+  padding: 8px;
+  
+  @media (max-width: 640px) {
+    width: 56px;
+    height: 56px;
+    padding: 6px;
+  }
 }
 
 .float-brand-logo {
@@ -588,7 +594,43 @@
 
 @media (max-width: 1024px) {
   .hero-content { grid-template-columns: 1fr; }
-  .hero-visual { display: none; }
+  
+  .hero-visual {
+    display: block;
+    margin-top: var(--space-4);
+  }
+  
+  .hero-graphic {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .hero-main-icon {
+    display: none;
+  }
+  
+  .float-cards {
+    position: relative;
+    inset: auto;
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .float-card {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    right: auto !important;
+    animation: none;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
   .cta-inner { flex-direction: column; text-align: center; }
   .testimonials-grid { grid-template-columns: 1fr; }
 }
