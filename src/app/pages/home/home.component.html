@@ -1,0 +1,158 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-particles">
+      @for (i of [1,2,3,4,5,6,7,8]; track i) {
+        <div class="particle" [class]="'p' + i"></div>
+      }
+    </div>
+  </div>
+
+  <div class="container hero-content">
+    <div class="hero-text" data-aos="fade-right">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        Distribuidor Oficial Lexmark &amp; Xerox en Bolivia
+      </div>
+      <h1 class="hero-title">
+        Tecnología de <span class="text-gradient">Calidad Superior</span> para tu Empresa
+      </h1>
+      <p class="hero-subtitle">
+        CIPRE Importaciones es su socio tecnológico de confianza. Equipos de cómputo, impresoras y soluciones de impresión con garantía oficial, asesoría especializada y el mejor soporte en Cochabamba, Bolivia.
+      </p>
+      <div class="hero-actions">
+        <a routerLink="/productos" class="btn btn-primary btn-lg">
+          Ver Catálogo
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        </a>
+        <a routerLink="/contacto" class="btn btn-outline btn-lg" style="color: white; border-color: rgba(255,255,255,0.5);">
+          Solicitar Cotización
+        </a>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="hero-stats" data-aos="fade-up" data-aos-delay="200">
+        @for (stat of stats; track stat.label) {
+          <div class="hero-stat">
+            <div class="stat-value">{{ stat.value }}</div>
+            <div class="stat-label">{{ stat.label }}</div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Hero Visual -->
+    <div class="hero-visual" data-aos="zoom-in" data-aos-delay="100">
+      <div class="hero-graphic">
+        <div class="hero-main-icon">
+          <div class="icon-ring-outer">
+            <div class="icon-ring-inner">
+              <app-icon name="laptop" [size]="72"></app-icon>
+            </div>
+          </div>
+        </div>
+        <div class="float-cards">
+          <div class="float-card card-1">
+            <div class="float-logo-wrap">
+              <img src="assets/logolexmark.png" alt="Lexmark" class="float-brand-logo" loading="lazy">
+            </div>
+            <div>
+              <div class="float-title">Distribuidor Oficial</div>
+              <div class="float-sub">Lexmark Bolivia</div>
+            </div>
+          </div>
+          <div class="float-card card-2">
+            <div class="float-logo-wrap">
+              <img src="assets/logoxerox.png" alt="Xerox" class="float-brand-logo" loading="lazy">
+            </div>
+            <div>
+              <div class="float-title">Distribuidor Oficial</div>
+              <div class="float-sub">Xerox Bolivia</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-wave">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path class="shape-fill wave1" d="M0,120V60.3C130,30 260,10 400,10C540,10 680,40 820,60C960,80 1100,90 1200,80V120H0Z" opacity="0.25"></path>
+        <path class="shape-fill wave2" d="M0,120V80C150,90 300,100 450,90C600,80 750,50 900,30C1050,10 1150,5 1200,5V120H0Z" opacity="0.5"></path>
+        <path class="shape-fill wave3" d="M0,120V90C120,70 240,50 360,50C480,50 600,70 720,80C840,90 960,90 1080,80L1200,70V120H0Z"></path>
+    </svg>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section features-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Nuestras Ventajas</span>
+      <h2 class="section-title">¿Por qué elegir <span>CIPRE Importaciones?</span></h2>
+      <p class="section-subtitle">
+        Más de 10 años siendo el aliado tecnológico preferido de empresas cochabambinas.
+      </p>
+    </div>
+    <div class="features-grid">
+      @for (feat of features; track feat.title; let i = $index) {
+        <div class="feature-card" data-aos="fade-up" [attr.data-aos-delay]="100 * (i + 1)">
+          <div class="feature-icon">
+            <app-icon [name]="feat.icon" [size]="32"></app-icon>
+          </div>
+          <h3 class="feature-title">{{ feat.title }}</h3>
+          <p class="feature-desc">{{ feat.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Products Preview -->
+<section class="section products-preview">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Catálogo</span>
+      <h2 class="section-title">Productos <span>Destacados</span></h2>
+    </div>
+    <div class="products-grid">
+      @for (product of topProducts; track product.name; let i = $index) {
+        <div class="product-preview-card" data-aos="fade-up" [attr.data-aos-delay]="100 * (i + 1)">
+          <div class="product-icon">
+            <app-icon [name]="product.icon" [size]="40"></app-icon>
+          </div>
+          <div class="product-badge">{{ product.badge }}</div>
+          <div class="product-category">{{ product.category }}</div>
+          <h3 class="product-name">{{ product.name }}</h3>
+          <p class="product-desc">{{ product.desc }}</p>
+          <a routerLink="/productos" class="product-link">
+            Ver más
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+          </a>
+        </div>
+      }
+    </div>
+    <div style="text-align: center; margin-top: var(--space-10);">
+      <a routerLink="/productos" class="btn btn-primary btn-lg">Ver Catálogo Completo</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" data-aos="zoom-in" data-aos-duration="1000">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-content">
+        <h2 class="cta-title">¿Buscas equipos para tu empresa?</h2>
+        <p class="cta-subtitle">Cuéntanos qué necesitas y te preparamos una cotización personalizada sin costo.</p>
+      </div>
+      <div class="cta-actions">
+        <a routerLink="/contacto" class="btn btn-white">Solicitar Cotización Gratis</a>
+        <a href="https://wa.me/59175470318" target="_blank" class="btn btn-outline" style="color:white; border-color: rgba(255,255,255,0.4);">
+          Chatear por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+

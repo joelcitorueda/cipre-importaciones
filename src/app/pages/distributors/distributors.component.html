@@ -1,0 +1,140 @@
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="container page-hero-content" data-aos="fade-down" data-aos-duration="1000">
+    <span class="section-label" style="color: rgba(255,255,255,0.8); justify-content: center; margin-bottom: 1rem;">
+      Alianzas Estratégicas
+    </span>
+    <h1>Nuestros Distribuidores</h1>
+    <p>Distribuidores oficiales de las marcas líderes mundiales en tecnología de impresión</p>
+  </div>
+</div>
+
+<!-- Intro Section -->
+<section class="section-sm distributor-intro">
+  <div class="container">
+    <div class="intro-card" data-aos="fade-up" data-aos-duration="800">
+      <div class="intro-icon">
+        <app-icon name="globe" [size]="40"></app-icon>
+      </div>
+      <div class="intro-text">
+        <h2>Distribuidores Autorizados en Bolivia</h2>
+        <p>
+          CIPRE Importaciones es distribuidor oficial y autorizado de <strong>Lexmark</strong> y <strong>Xerox</strong> en Bolivia.
+          Esto nos permite ofrecerle productos 100% originales, con garantía del fabricante, precios competitivos y el mejor soporte técnico del mercado.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Distributors Detail -->
+<section class="section distributors-section">
+  <div class="container">
+    @for (dist of distributors; track dist.name; let i = $index) {
+      <div class="distributor-block" [class.reverse]="i % 2 !== 0" data-aos="fade-up" [attr.data-aos-delay]="150 * (i + 1)">
+        <!-- Header -->
+        <div class="dist-header" [style]="'--dist-color:' + dist.color">
+          <div class="dist-logo-area">
+            <div class="dist-icon">
+              <img [src]="dist.logo" [alt]="'Logo ' + dist.name" class="dist-logo-img">
+            </div>
+            <div>
+              <h2 class="dist-name">{{ dist.name }}</h2>
+              <p class="dist-tagline">{{ dist.tagline }}</p>
+              <div class="dist-meta">
+                <span class="meta-chip">
+                  <app-icon name="location" [size]="14"></app-icon>
+                  {{ dist.origin }}
+                </span>
+                <span class="meta-chip">
+                  <app-icon name="calendar" [size]="14"></app-icon>
+                  Desde {{ dist.founded }}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="dist-badge-area">
+            <div class="official-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Distribuidor Oficial en Bolivia
+            </div>
+          </div>
+        </div>
+
+        <div class="dist-body">
+          <!-- Description -->
+          <div class="dist-desc-col">
+            <p class="dist-description">{{ dist.description }}</p>
+
+            <div class="advantages-section">
+              <h3 class="sub-section-title">¿Por qué elegir {{ dist.name }}?</h3>
+              <ul class="advantages-list">
+                @for (adv of dist.advantages; track adv) {
+                  <li class="advantage-item">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    {{ adv }}
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+
+          <!-- Products & Models -->
+          <div class="dist-products-col">
+            <div class="products-panel">
+              <h3 class="sub-section-title">Líneas de Productos</h3>
+              <ul class="products-list">
+                @for (product of dist.products; track product) {
+                  <li class="product-item">{{ product }}</li>
+                }
+              </ul>
+            </div>
+
+            <div class="models-panel">
+              <h3 class="sub-section-title">Modelos Disponibles</h3>
+              <div class="models-grid">
+                @for (model of dist.models; track model) {
+                  <div class="model-chip">{{ model }}</div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dist-footer">
+          <a routerLink="/contacto" class="btn btn-primary">
+            Solicitar Información de {{ dist.name }}
+          </a>
+          <a routerLink="/productos" class="btn btn-outline">
+            Ver Productos {{ dist.name }}
+          </a>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Why Distributor -->
+<section class="section why-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-down">
+      <span class="section-label">Ventajas</span>
+      <h2 class="section-title">¿Por qué comprar con <span>distribuidores oficiales?</span></h2>
+      <p class="section-subtitle">
+        Adquirir con un distribuidor autorizado garantiza productos originales, garantía válida y soporte técnico certificado.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      @for (item of whyDistributor; track item.title; let i = $index) {
+        <div class="why-card" data-aos="flip-left" [attr.data-aos-delay]="100 * i">
+          <div class="why-icon">
+            <app-icon [name]="item.icon" [size]="30"></app-icon>
+          </div>
+          <h3 class="why-title">{{ item.title }}</h3>
+          <p class="why-desc">{{ item.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

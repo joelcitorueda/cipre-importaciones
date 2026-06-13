@@ -1,0 +1,55 @@
+<header class="navbar" [class.scrolled]="isScrolled()">
+  <div class="container navbar-inner">
+    <!-- Logo -->
+    <a href="#" class="navbar-logo" (click)="navigate('/', $event)">
+      <img src="assets/logocipre.png" alt="CIPRE Importaciones" class="navbar-logo-img">
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="navbar-nav">
+      @for (item of navItems; track item.path) {
+        <a
+          href="#"
+          (click)="navigate(item.path, $event)"
+          [class.active]="isActive(item.path)"
+          class="nav-link"
+        >
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+
+    <!-- CTA Button -->
+    <a href="#" class="btn btn-primary navbar-cta" (click)="navigate('/contacto', $event)">
+      Contáctanos
+    </a>
+
+    <!-- Hamburger -->
+    <button class="hamburger" (click)="toggleMobileMenu()" [class.open]="isMobileMenuOpen()" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (isMobileMenuOpen()) {
+    <div class="mobile-menu">
+      <nav class="mobile-nav">
+        @for (item of navItems; track item.path) {
+          <a
+            href="#"
+            (click)="navigate(item.path, $event)"
+            [class.active]="isActive(item.path)"
+            class="mobile-nav-link"
+          >
+            {{ item.label }}
+          </a>
+        }
+        <a href="#" class="btn btn-primary" (click)="navigate('/contacto', $event)">
+          Contáctanos
+        </a>
+      </nav>
+    </div>
+  }
+</header>

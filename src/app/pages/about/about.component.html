@@ -1,0 +1,181 @@
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="container page-hero-content" data-aos="fade-down" data-aos-duration="1000">
+    <span class="section-label" style="color: rgba(255,255,255,0.8); margin-bottom: 1rem; justify-content: center;">
+      Conócenos
+    </span>
+    <h1>Quiénes Somos</h1>
+    <p>Más de una década siendo el socio tecnológico de confianza en Bolivia</p>
+  </div>
+</div>
+
+<!-- Misión & Visión -->
+<section class="section mission-vision">
+  <div class="container">
+    <div class="mv-grid">
+      <!-- Misión -->
+      <div class="mv-card mission" data-aos="fade-right">
+        <div class="mv-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+            <circle cx="24" cy="24" r="22" fill="rgba(0,166,81,0.15)" stroke="#00A651" stroke-width="2"/>
+            <path d="M24 14l2.45 7.5H34l-6.18 4.5 2.36 7.24L24 28.75l-6.18 4.49 2.36-7.24L14 21.5h7.55z" fill="#00A651"/>
+          </svg>
+        </div>
+        <div class="mv-tag">Misión</div>
+        <h2>Nuestra Misión</h2>
+        <div class="divider"></div>
+        <p>{{ mision }}</p>
+        <div class="mv-highlights">
+          <div class="highlight-item">
+            <span class="highlight-dot"></span>
+            Asesoría técnica calificada
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-dot"></span>
+            Entrega oportuna y productos innovadores
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-dot"></span>
+            Soluciones integrales de productividad
+          </div>
+        </div>
+      </div>
+
+      <!-- Visión -->
+      <div class="mv-card vision" data-aos="fade-left" data-aos-delay="200">
+        <div class="mv-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+            <circle cx="24" cy="24" r="22" fill="rgba(0,102,204,0.1)" stroke="#0066CC" stroke-width="2"/>
+            <path d="M24 18c-5.52 0-10 4.48-10 10 0 .74.1 1.45.25 2.14.55-.08 1.12-.14 1.75-.14 5.52 0 10 4.48 10 10 0 .63-.06 1.24-.14 1.83C26.55 41.92 27.25 42 28 42c5.52 0 10-4.48 10-10S29.52 18 24 18zm0 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z" fill="#0066CC"/>
+          </svg>
+        </div>
+        <div class="mv-tag vision-tag">Visión</div>
+        <h2>Nuestra Visión</h2>
+        <div class="divider" style="background: linear-gradient(90deg, #0066CC, #4499DD);"></div>
+        <p>{{ vision }}</p>
+        <div class="mv-highlights">
+          <div class="highlight-item blue">
+            <span class="highlight-dot blue"></span>
+            Principal importadora y distribuidora de referencia
+          </div>
+          <div class="highlight-item blue">
+            <span class="highlight-dot blue"></span>
+            Catálogo completo de insumos y equipos
+          </div>
+          <div class="highlight-item blue">
+            <span class="highlight-dot blue"></span>
+            Cadena de suministro altamente eficiente
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Historia / Timeline -->
+<section class="section timeline-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-label">Historia</span>
+      <h2 class="section-title">Nuestro <span>Recorrido</span></h2>
+      <p class="section-subtitle">Desde nuestra fundación hemos crecido consistentemente, convirtiéndonos en un referente del sector tecnológico en Bolivia.</p>
+    </div>
+
+    <div class="timeline">
+      @for (milestone of milestones; track milestone.year; let i = $index) {
+        <div class="timeline-item" [class.right]="i % 2 !== 0" data-aos="fade-up" [attr.data-aos-delay]="150 * (i + 1)">
+          <div class="timeline-content">
+            <div class="timeline-year">{{ milestone.year }}</div>
+            <h3 class="timeline-title">{{ milestone.title }}</h3>
+            <p class="timeline-desc">{{ milestone.desc }}</p>
+          </div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-spacer"></div>
+        </div>
+      }
+      <div class="timeline-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Valores -->
+<section class="section values-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Nuestros Valores</span>
+      <h2 class="section-title">Los principios que <span>nos guían</span></h2>
+      <p class="section-subtitle">
+        Cada decisión en CIPRE Importaciones está guiada por valores sólidos que garantizan el mejor servicio.
+      </p>
+    </div>
+
+    <div class="values-grid">
+      @for (value of values; track value.title; let i = $index) {
+        <div class="value-card" data-aos="zoom-in" [attr.data-aos-delay]="100 * (i + 1)">
+          <div class="value-icon">
+            <app-icon [name]="value.icon" [size]="32"></app-icon>
+          </div>
+          <h3 class="value-title">{{ value.title }}</h3>
+          <p class="value-desc">{{ value.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="section team-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Nuestro Equipo</span>
+      <h2 class="section-title">Las personas <span>detrás de CIPRE</span></h2>
+    </div>
+
+    <div class="team-grid">
+      @for (member of team; track member.name; let i = $index) {
+        <div class="team-card" data-aos="fade-up" [attr.data-aos-delay]="150 * (i + 1)">
+          <div class="team-avatar">{{ member.initials }}</div>
+          <h3 class="team-name">{{ member.name }}</h3>
+          <div class="team-role">{{ member.role }}</div>
+          <p class="team-desc">{{ member.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Info Banner -->
+<section class="info-banner">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-icon"><app-icon name="location" [size]="22"></app-icon></div>
+        <div>
+          <div class="info-label">Dirección</div>
+          <div class="info-value">Calle Juana Azurduy de Padilla / Zona nueva Canan, Cochabamba</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><app-icon name="document" [size]="22"></app-icon></div>
+        <div>
+          <div class="info-label">NIT</div>
+          <div class="info-value">6489612010</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><app-icon name="phone" [size]="22"></app-icon></div>
+        <div>
+          <div class="info-label">Celular</div>
+          <div class="info-value">75470318</div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon"><app-icon name="email" [size]="22"></app-icon></div>
+        <div>
+          <div class="info-label">Email</div>
+          <div class="info-value">rudygalarza123&#64;gmail.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
