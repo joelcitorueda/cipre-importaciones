@@ -99,12 +99,25 @@
                 }
               </button>
             </form>
+          } @else if (submitError()) {
+            <!-- Error State -->
+            <div class="success-state">
+              <div class="success-icon">❌</div>
+              <h2>Error al Enviar</h2>
+              <p>Hubo un problema al enviar tu mensaje. Por favor intenta de nuevo o contáctanos directamente por WhatsApp.</p>
+              <div class="success-actions">
+                <button class="btn btn-primary" (click)="resetForm()">Intentar de Nuevo</button>
+                <a href="https://wa.me/59175470318" target="_blank" class="btn btn-outline">
+                  Contactar por WhatsApp
+                </a>
+              </div>
+            </div>
           } @else {
             <!-- Success State -->
             <div class="success-state">
               <div class="success-icon">✅</div>
               <h2>¡Mensaje Enviado!</h2>
-              <p>Gracias por contactarnos. Nuestro equipo se pondrá en contacto contigo en las próximas horas.</p>
+              <p>Gracias por contactarnos. Nuestro equipo se pondrá en contacto contigo en las próximas horas. Tu mensaje ha sido enviado a nuestro equipo de ventas.</p>
               <div class="success-actions">
                 <button class="btn btn-primary" (click)="resetForm()">Enviar Otro Mensaje</button>
                 <a href="https://wa.me/59175470318" target="_blank" class="btn btn-outline">
