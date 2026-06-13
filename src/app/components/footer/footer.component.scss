@@ -1,5 +1,5 @@
 .footer {
-  background: #0a1a0f;
+  background: #0a1628;
   color: rgba(255, 255, 255, 0.8);
   position: relative;
 }
@@ -78,11 +78,11 @@
   }
 
   &:hover {
-    background: var(--color-primary);
-    border-color: var(--color-primary);
+    background: var(--gradient-brand-horizontal);
+    border-color: transparent;
     color: var(--color-white);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 166, 81, 0.3);
+    box-shadow: var(--shadow-brand);
   }
 }
 
@@ -103,7 +103,7 @@
     left: 0;
     width: 30px;
     height: 2px;
-    background: var(--color-primary);
+    background: var(--gradient-brand-horizontal);
     border-radius: var(--radius-full);
   }
 }
@@ -160,12 +160,12 @@
   width: 32px;
   height: 32px;
   border-radius: var(--radius-md);
-  background: rgba(0, 166, 81, 0.15);
+  background: rgba(21, 101, 192, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: var(--color-primary);
+  color: var(--color-blue-lighter);
 
   svg {
     width: 16px;
