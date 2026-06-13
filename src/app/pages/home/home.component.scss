@@ -227,6 +227,11 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* Mobile Float Cards (Hidden on Desktop) */
+.mobile-float-cards {
+  display: none;
+}
+
 /* Float Cards */
 .float-cards {
   position: absolute;
@@ -596,39 +601,28 @@
   .hero-content { grid-template-columns: 1fr; }
   
   .hero-visual {
-    display: block;
-    margin-top: var(--space-4);
+    display: none; /* Hide the side visual on mobile completely */
   }
   
-  .hero-graphic {
-    width: auto;
-    height: auto;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .hero-main-icon {
-    display: none;
-  }
-  
-  .float-cards {
-    position: relative;
-    inset: auto;
+  .mobile-float-cards {
     display: flex;
     gap: var(--space-4);
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
-  }
-  
-  .float-card {
-    position: relative;
-    top: auto !important;
-    left: auto !important;
-    bottom: auto !important;
-    right: auto !important;
-    animation: none;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    margin-bottom: var(--space-8);
+    
+    .float-card {
+      position: relative;
+      top: auto !important;
+      left: auto !important;
+      bottom: auto !important;
+      right: auto !important;
+      animation: none;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      width: 100%; /* Make them full width on very small screens or let them wrap */
+      max-width: 300px;
+    }
   }
   
   .cta-inner { flex-direction: column; text-align: center; }
