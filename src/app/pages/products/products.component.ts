@@ -380,4 +380,16 @@ export class ProductsComponent {
   setCategory(id: string): void {
     this.activeCategory.set(id);
   }
+
+  whatsAppNumber = '59175470318';
+
+  getWhatsAppLink(product: Product): string {
+    const specsText = product.specs.map(s => encodeURIComponent(`- ${s}`)).join('%0A');
+    const message = encodeURIComponent('Hola, estoy interesado en:') +
+      '%0A%0A' + encodeURIComponent(product.name) +
+      '%0A%0A' + encodeURIComponent('Especificaciones:') +
+      '%0A' + specsText +
+      '%0A%0A' + encodeURIComponent('¿Podrían informarme si está disponible y el precio por favor?');
+    return `https://wa.me/${this.whatsAppNumber}?text=${message}`;
+  }
 }
