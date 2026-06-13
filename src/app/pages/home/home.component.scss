@@ -253,20 +253,20 @@
 
 /* Logo inside float card */
 .float-logo-wrap {
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-lg);
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-xl);
   background: rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 8px;
+  padding: 12px;
   
   @media (max-width: 640px) {
-    width: 56px;
-    height: 56px;
-    padding: 6px;
+    width: 72px;
+    height: 72px;
+    padding: 8px;
   }
 }
 
@@ -289,16 +289,16 @@
 }
 
 .float-title {
-  font-size: var(--text-sm);
-  font-weight: 600;
+  font-size: var(--text-base);
+  font-weight: 700;
   color: var(--color-white);
   line-height: 1;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .float-sub {
-  font-size: var(--text-xs);
-  color: rgba(255, 255, 255, 0.55);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 /* Features Section */
